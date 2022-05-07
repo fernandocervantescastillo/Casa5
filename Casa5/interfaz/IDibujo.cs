@@ -9,9 +9,9 @@ namespace Casa5.interfaz
     public interface IDibujo
     {
         void dibujar();
-        void rotar();
-        void ampliar();
-        void trasladar();
+        void rotar(float x, float y, float z);
+        void ampliar(float x, float y, float z);
+        void trasladar(float x, float y, float z);
         void dispose();
     }
 }

@@ -95,17 +95,17 @@ namespace Casa5.ctr
             l.Clear();
         }
 
-        public void rotar()
+        public void rotar(float x, float y, float z)
         {
             throw new NotImplementedException();
         }
 
-        public void ampliar()
+        public void ampliar(float x, float y, float z)
         {
             throw new NotImplementedException();
         }
 
-        public void trasladar()
+        public void trasladar(float x, float y, float z)
         {
             throw new NotImplementedException();
         }
