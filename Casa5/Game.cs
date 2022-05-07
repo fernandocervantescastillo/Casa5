@@ -32,16 +32,18 @@ namespace Casa5
 
 
             escenario = new Escenario();
-
+            /*
             Casa casa = new Casa(5, 5, 5, 0, 0, 0);
             Casa casa1 = new Casa(5, 5, 5, 10, 0, 0);
 
-            casa.guardarCasa("Casa.txt");
-            casa1.guardarCasa("Casa1.txt");
+            casa.serializar("Casa.txt");
+            casa1.serializar("Casa1.txt");
+            */
 
-
-            Casa c1 = Casa.getCasa("Casa.txt");
-            Casa c2 = Casa.getCasa("Casa1.txt");
+            Casa c1 = Objeto.desserializar<Casa>("Casa.txt");
+            c1.init();
+            Casa c2 = Objeto.desserializar<Casa>("Casa1.txt");
+            c2.init();
 
             escenario.addObjeto("casa", c1);
             escenario.addObjeto("casa1", c2);
@@ -67,8 +69,6 @@ namespace Casa5
             angle = angle + 0.8f;
             GL.Rotate(20, 1, 0, 0);
             GL.Rotate(angle, 0, 1, 0);
-            //this.casa.dibujar();
-            //this.casa1.dibujar();
 
             escenario.dibujar();
 
@@ -91,6 +91,41 @@ namespace Casa5
             base.OnResize(e);
         }
 
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+            if(e.KeyChar == 'l' || e.KeyChar == 'L')
+            {
+                cargarCasa();
+                Console.WriteLine("Fernando");
+            }
+        }
+
+        private void cargarCasa()
+        {
+            /*
+            OpenFileDialog fDialog = new OpenFileDialog();
+
+            if (fDialog.ShowDialog() != DialogResult.OK)
+
+                return;
+
+            System.IO.FileInfo fInfo = new System.IO.FileInfo(fDialog.FileName);
+
+            string strFileName = fInfo.Name;
+
+            string strFilePath = fInfo.DirectoryName;
+
+            MessageBox.Show(strFileName + ", " + strFilePath);
+            */
+            /*
+            OpenFileDialog dialog = new OpenFileDialog();
+            if (DialogResult.OK == dialog.ShowDialog())
+            {
+                string path = dialog.FileName;
+            }
+            */
+        }
 
 
     }

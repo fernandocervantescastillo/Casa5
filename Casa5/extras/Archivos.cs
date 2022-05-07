@@ -11,20 +11,13 @@ namespace Casa5.extras
     class Archivos
     {
         static string path = "..//..//..//file//";
-        static string name = "MyTest.txt";
 
         public static void agregarArhivo(string name, string json)
         {
-
-            if (!File.Exists(path + name))
+            using (StreamWriter sw = File.CreateText(path + name))
             {
-                // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(path + name))
-                {
-                    sw.WriteLine(json);
-                }
+                sw.WriteLine(json);
             }
-
         }
 
 

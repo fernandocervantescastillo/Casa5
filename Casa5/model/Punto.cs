@@ -71,15 +71,24 @@ namespace Casa5.ctr
             this.ejeX = this.ejeY = this.ejeZ = valor;
         }
 
+        public void sumar(Punto a)
+        {
+            this.ejeX += a.x;
+            this.ejeY += a.y;
+            this.ejeZ += a.z;
+        }
+
+        public Punto copiar()
+        {
+            return new Punto(x, y, z);
+        }
+
         public bool compareTo(Punto a)
         {
             return (this.ejeX == a.ejeX && this.ejeY == a.ejeY && this.ejeZ == a.ejeZ);
         }
 
-
         public override string ToString() => $"({ejeX}|{ejeY}|{ejeZ})";
-
-
 
     }
 }
